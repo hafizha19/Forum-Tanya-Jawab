@@ -13,7 +13,7 @@ class CreatePertanyaanTable extends Migration
      */
     public function up()
     {
-        Schema::create('pertanyaan', function (Blueprint $table) {
+        Schema::create('pertanyaans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('judul');
             $table->longText('isi');
@@ -31,6 +31,6 @@ class CreatePertanyaanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pertanyaan');
+        Schema::dropIfExists('pertanyaans');
     }
 }
