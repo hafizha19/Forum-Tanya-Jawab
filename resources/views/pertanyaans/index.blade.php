@@ -1,4 +1,4 @@
-@include('items.navbar')
+@include('layouts.navbar')
 
 <!-- Masthead-->
 <header class="masthead">
@@ -119,4 +119,4 @@
     </div>
 </section>
 
-@include('items.footer')
+@include('layouts.footer')
