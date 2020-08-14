@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/pertanyaans', 'PertanyaansController@index')->name('index');
 Route::get('/pertanyaans/create', 'PertanyaansController@create')->name('create');
+Route::get('/pertanyaans/show', 'PertanyaansController@show')->name('show');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

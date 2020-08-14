@@ -43,22 +43,24 @@
                         <div class="row mb-1 border border-right-0">
                             <button class="btn btn-light"><img src="assets/up.png" alt="UP" class="img-fluid"></button>
                             <p class="m-auto">Nilai</p>
-                            <button class="btn btn-light"><img src="assets/down.png" alt="Down" class="img-fluid"></button>
+                            <button class="btn btn-light"><img src="assets/down.png" alt="Down"
+                                    class="img-fluid"></button>
                         </div>
                     </div>
                     <div class="col-11 card mb-1 border-left-0">
                         <div class="card-body">
                             <h4 class="card-title">Judul</h4>
-                            <p class="card-text">Isi : Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ut illum magnam explicabo facilis deleniti! Sapiente temporibus laborum reprehenderit fugiat laudantium odit eos esse nesciunt minus, ut deleniti optio sunt.</p>
+                            <p class="card-text">Isi : Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                                ut illum magnam explicabo facilis deleniti! Sapiente temporibus laborum reprehenderit
+                                fugiat laudantium odit eos esse nesciunt minus, ut deleniti optio sunt.</p>
                             <h6 class="d-flex">
                                 <p class="my-auto mr-2">Tags: </p>
-                                <p class="badge badge-secondary my-auto">New</p> 
-                                <p class="badge badge-secondary my-auto">New</p> 
-                                <p class="badge badge-secondary my-auto">New</p> 
+                                <p class="badge badge-secondary my-auto">New</p>
+                                <p class="badge badge-secondary my-auto">New</p>
+                                <p class="badge badge-secondary my-auto">New</p>
                                 <p class="m-auto">Created 11/11/11</p>
                                 <p class="m-auto">Updated 11/11/11</p>
-                                <button class="btn btn-primary ml-auto">Detail
-                            </button>
+                            <a href="{{ route('show') }}" class="btn btn-primary ml-auto">Detail</a>
                             </h6>
                         </div>
                     </div>
@@ -68,22 +70,25 @@
                         <div class="row mb-1 border border-right-0">
                             <button class="btn btn-light"><img src="assets/up.png" alt="UP" class="img-fluid"></button>
                             <p class="m-auto">Nilai</p>
-                            <button class="btn btn-light"><img src="assets/down.png" alt="Down" class="img-fluid"></button>
+                            <button class="btn btn-light"><img src="assets/down.png" alt="Down"
+                                    class="img-fluid"></button>
                         </div>
                     </div>
                     <div class="col-11 card mb-1 border-left-0">
                         <div class="card-body">
                             <h4 class="card-title">Judul</h4>
-                            <p class="card-text">Isi : Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ut illum magnam explicabo facilis deleniti! Sapiente temporibus laborum reprehenderit fugiat laudantium odit eos esse nesciunt minus, ut deleniti optio sunt.</p>
+                            <p class="card-text">Isi : Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                                ut illum magnam explicabo facilis deleniti! Sapiente temporibus laborum reprehenderit
+                                fugiat laudantium odit eos esse nesciunt minus, ut deleniti optio sunt.</p>
                             <h6 class="d-flex">
                                 <p class="my-auto mr-2">Tags: </p>
-                                <p class="badge badge-secondary my-auto">New</p> 
-                                <p class="badge badge-secondary my-auto">New</p> 
-                                <p class="badge badge-secondary my-auto">New</p> 
+                                <p class="badge badge-secondary my-auto">New</p>
+                                <p class="badge badge-secondary my-auto">New</p>
+                                <p class="badge badge-secondary my-auto">New</p>
                                 <p class="m-auto">Created 11/11/11</p>
                                 <p class="m-auto">Updated 11/11/11</p>
                                 <button class="btn btn-primary ml-auto">Detail
-                            </button>
+                                </button>
                             </h6>
                         </div>
                     </div>
@@ -93,22 +98,25 @@
                         <div class="row mb-1 border border-right-0">
                             <button class="btn btn-light"><img src="assets/up.png" alt="UP" class="img-fluid"></button>
                             <p class="m-auto">Nilai</p>
-                            <button class="btn btn-light"><img src="assets/down.png" alt="Down" class="img-fluid"></button>
+                            <button class="btn btn-light"><img src="assets/down.png" alt="Down"
+                                    class="img-fluid"></button>
                         </div>
                     </div>
                     <div class="col-11 card mb-1 border-left-0">
                         <div class="card-body">
                             <h4 class="card-title">Judul</h4>
-                            <p class="card-text">Isi : Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ut illum magnam explicabo facilis deleniti! Sapiente temporibus laborum reprehenderit fugiat laudantium odit eos esse nesciunt minus, ut deleniti optio sunt.</p>
+                            <p class="card-text">Isi : Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                                ut illum magnam explicabo facilis deleniti! Sapiente temporibus laborum reprehenderit
+                                fugiat laudantium odit eos esse nesciunt minus, ut deleniti optio sunt.</p>
                             <h6 class="d-flex">
                                 <p class="my-auto mr-2">Tags: </p>
-                                <p class="badge badge-secondary my-auto">New</p> 
-                                <p class="badge badge-secondary my-auto">New</p> 
-                                <p class="badge badge-secondary my-auto">New</p> 
+                                <p class="badge badge-secondary my-auto">New</p>
+                                <p class="badge badge-secondary my-auto">New</p>
+                                <p class="badge badge-secondary my-auto">New</p>
                                 <p class="m-auto">Created 11/11/11</p>
                                 <p class="m-auto">Updated 11/11/11</p>
                                 <button class="btn btn-primary ml-auto">Detail
-                            </button>
+                                </button>
                             </h6>
                         </div>
                     </div>
