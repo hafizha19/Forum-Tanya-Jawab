@@ -18,7 +18,9 @@ class PertanyaansController extends Controller
      */
     public function index()
     {
-        return view('pertanyaans.index');
+        $pertanyaan = Pertanyaan::all();
+
+        return view('pertanyaans.index', compact('pertanyaan'));
     }
 
     /**
@@ -39,7 +41,8 @@ class PertanyaansController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pertanyaan::create($request->all());
+        return redirect('/pertanyaans')->with('status', 'Pertanyaan Berhasil Ditambahkan');
     }
 
     /**

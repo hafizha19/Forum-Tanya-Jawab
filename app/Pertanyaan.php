@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pertanyaan extends Model
 {
-    protected $table = 'Pertanyaan';
+    protected $table = 'Pertanyaans';
+    protected $guarded = [];
 
     public function author()
     {

@@ -7,36 +7,38 @@
 @section('content')
 <div class="container">
 
-    <h4 class="text-center t">
-        Tulis Pertanyaanmu Disini
-    </h4>
+  <h4 class="text-center t">
+    Tulis Pertanyaanmu Disini
+  </h4>
 
-    <form>
-        <div class="form-group">
-            <label for="judul">Judul</label>
-            <input type="judul" class="form-control" id="judul" placeholder="Masukkan judul..">
-        </div>
-        <div class="form-group">
-            <label for="isi">Isi</label>
-        <textarea class="form-control my-editor" id="isi" rows="3" name="isi">{!! old('isi', $isi ?? '') !!}</textarea>
-        </div>
-      <div class="form-group">
-            <label for="tags">Tags</label>
-            <input type="text" class="form-control my-editor" id="tags" placeholder="Masukkan tags..">
-        </div>
-        <div class="bg-primary py-1 mb-2">
-            <p class="row justify-content-center text-light my-1">
-                <button type="submit" class="btn btn-primary">Buat Pertanyaan</button>
-            </p>
-        </div>
+<form action="{{ route('store') }}" method="POST">
+  @csrf
+    <div class="form-group">
+      <label for="judul">Judul</label>
+      <input type="judul" class="form-control" id="judul" name="judul" placeholder="Masukkan judul..">
+    </div>
+    <div class="form-group">
+      <label for="isi">Isi</label>
+      <textarea class="form-control my-editor" id="isi" name="isi" rows="3" name="isi">{!! old('isi', $isi ?? '') !!}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="tags">Tags</label>
+      <input type="text" class="form-control" id="tags" name="tags" placeholder="Masukkan tags..">
+    </div>
+    <input type="hidden" class="form-control" id="user-id" name="user_id" placeholder="Masukkan User ID" value="{{Auth::user()->id}}">
+    
 
-    </form>
+      {{-- <div class="row justify-content-center text-light my-1"> --}}
+        <button type="submit" class="btn btn-primary btn-block">Buat Pertanyaan</button>
+      {{-- </div> --}}
+
+  </form>
 </div>
 @endsection
 
 @push('scripts')
 <script>
-    var editor_config = {
+  var editor_config = {
       path_absolute : "/",
       selector: "textarea.my-editor",
       plugins: [
@@ -70,5 +72,5 @@
     };
   
     tinymce.init(editor_config);
-  </script>
+</script>
 @endpush
