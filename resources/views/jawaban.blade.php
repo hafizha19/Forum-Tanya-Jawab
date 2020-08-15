@@ -8,25 +8,18 @@
 <div class="container">
 
   <h4 class="text-center t">
-    Tulis Pertanyaanmu Disini
+    Tulis Jawabanmu Disini
   </h4>
 
-<form action="{{ route('pertanyaan.store') }}" method="POST">
+<form action="{{ route('jawaban.store') }}" method="POST">
   @csrf
-    <div class="form-group">
-      <label for="judul">Judul</label>
-      <input type="judul" class="form-control" id="judul" name="judul" placeholder="Masukkan judul..">
-    </div>
+    
     <div class="form-group">
       <label for="isi">Isi</label>
       <textarea class="form-control my-editor" id="isi" name="isi" rows="3" name="isi">{!! old('isi', $isi ?? '') !!}</textarea>
-    </div>
-    <div class="form-group">
-      <label for="tags">Tags</label>
-      <input type="text" class="form-control" id="tags" name="tags" placeholder="Masukkan tags..">
-    </div>
-    <input type="hidden" class="form-control" id="user-id" name="user_id" placeholder="Masukkan User ID" value="{{Auth::user()->id}}">
-    
+    </>
+    {{-- <input type="hidden" class="form-control" id="pertanyaan_id" name="pertanyaan_id" placeholder="Masukkan User ID" value="{{$pertanyaan->id}}">
+    <input type="hidden" class="form-control" id="user_id" name="user_id" placeholder="Masukkan User ID" value="{{$jawaban->author->id}}"> --}}
 
       {{-- <div class="row justify-content-center text-light my-1"> --}}
         <button type="submit" class="btn btn-primary btn-block">Buat Pertanyaan</button>

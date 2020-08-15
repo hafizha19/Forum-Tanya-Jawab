@@ -13,4 +13,14 @@ class Pertanyaan extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+    public function komentars()
+    {
+        return $this->hasMany('App\Komentar');
+    }
+    public function jawabans()
+    {
+        return $this->hasMany('App\Jawaban');
+    }
+
 }
+

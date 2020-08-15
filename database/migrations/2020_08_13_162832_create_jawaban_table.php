@@ -17,7 +17,7 @@ class CreateJawabanTable extends Migration
             $table->bigIncrements('id');
             $table->longText('isi');
            // $table->date('tanggal_dibuat');
-            $table->date('tanggal_diperbarui');
+            // $table->date('tanggal_diperbarui');
             $table->timestamps();
         });
     }

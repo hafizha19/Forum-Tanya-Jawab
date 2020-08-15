@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Komentar;
 use App\Pertanyaan;
 use Illuminate\Http\Request;
 
-class PertanyaansController extends Controller
+class KomentarsController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -18,9 +15,9 @@ class PertanyaansController extends Controller
      */
     public function index()
     {
-        $pertanyaan = Pertanyaan::all();
-        // $komentar = $pertanyaan->komentars();
-        return view('pertanyaans.index', compact('pertanyaan'));
+        // $pertanyaan_id = Pertanyaan
+        // $komentar = Komentar::all();
+        // return view('pertanyaans.index', compact('komentar'));
     }
 
     /**
@@ -30,7 +27,7 @@ class PertanyaansController extends Controller
      */
     public function create()
     {
-        return view('pertanyaans.create');
+        return "wwwwwwwwwwwwkkkkkkkk";
     }
 
     /**
@@ -41,29 +38,28 @@ class PertanyaansController extends Controller
      */
     public function store(Request $request)
     {
-        Pertanyaan::create($request->all());
-        return redirect('/pertanyaans')->with('status', 'Pertanyaan Berhasil Ditambahkan');
+        Komentar::create($request->all());
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pertanyaan  $pertanyaan
+     * @param  \App\Komentar  $komentar
      * @return \Illuminate\Http\Response
      */
-    public function show(Pertanyaan $pertanyaan)
+    public function show(Komentar $komentar)
     {
-        
-        return view('pertanyaans.show', compact('pertanyaan'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pertanyaan  $pertanyaan
+     * @param  \App\Komentar  $komentar
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pertanyaan $pertanyaan)
+    public function edit(Komentar $komentar)
     {
         //
     }
@@ -72,10 +68,10 @@ class PertanyaansController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pertanyaan  $pertanyaan
+     * @param  \App\Komentar  $komentar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pertanyaan $pertanyaan)
+    public function update(Request $request, Komentar $komentar)
     {
         //
     }
@@ -83,10 +79,10 @@ class PertanyaansController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pertanyaan  $pertanyaan
+     * @param  \App\Komentar  $komentar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pertanyaan $pertanyaan)
+    public function destroy(Komentar $komentar)
     {
         //
     }

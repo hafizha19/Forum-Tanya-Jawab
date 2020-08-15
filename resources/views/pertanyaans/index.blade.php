@@ -50,20 +50,30 @@
                     <div class="col-1 d-flex ">
                         <div class="row mb-1 border border-right-0">
                             <button class="btn btn-light"><img src="assets/up.png" alt="UP" class="img-fluid"></button>
-                            <p class="m-auto">Nilai</p>
+                            <p class="m-auto">0</p>
                             <button class="btn btn-light"><img src="assets/down.png" alt="Down"
                                     class="img-fluid"></button>
                         </div>
                     </div>
                     <div class="col-11 card mb-1 border-left-0">
                         <div class="card-body">
-                            <h4 class="card-title">{{$tanya->judul}}</h4>
-                            <p class="card-text">{!! $tanya->isi !!}</p>
+                        <h4 class="card-title">{{$tanya->judul}} </h4>
+                            <p class="card-text">{!! $tanya->isi !!} - <a href="#" class="font-weight-light " style="color: #50a3a4 ">{{$tanya->author->name}}</a></p>
                             <h6 class="d-flex">
-                                <p class="my-auto mr-2">Tags: {{$tanya->tags}}</p>
-                                <p class="m-auto">Created 11/11/11</p>
-                                <p class="m-auto">Updated 11/11/11</p>
-                                <a href="{{ route('show') }}" class="btn btn-primary ml-auto">Detail</a>
+                                <p class="my-auto mr-2">Tags: </p>
+                                @php
+                                    $tags = $tanya->tags;
+                                    $tagsArray = explode(',', $tags);
+                                    
+                                @endphp
+                                @foreach ($tagsArray as $tag)
+                                    <p class="badge badge-secondary my-auto mr-1"> {{ $tag }} </p>
+                                @endforeach
+                                
+                                
+                                <p class="m-auto">Created {{$tanya->created_at}}</p>
+                                <p class="m-auto">Updated {{$tanya->updated_at}}</p>
+                                <a href="/pertanyaans/{{$tanya->id}}" class="btn btn-primary ml-auto">Detail</a>
                             </h6>
                         </div>
                     </div>
