@@ -22,5 +22,10 @@ class Pertanyaan extends Model
         return $this->hasMany('App\Jawaban');
     }
 
+    public function poin()
+    {
+        return $this->hasMany('App\Poin');
+    }
+
 }
 

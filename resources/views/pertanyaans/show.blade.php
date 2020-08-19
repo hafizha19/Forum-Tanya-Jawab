@@ -21,9 +21,16 @@
     <div class="row">
         <div class="col-1 d-flex ">
             <div class="row mb-1 border border-right-0">
-                <button class="btn btn-light"><img src="/assets/up.png" alt="UP" class="img-fluid"></button>
-                <p class="m-auto">0</p>
-                <button class="btn btn-light"><img src="/assets/down.png" alt="Down" class="img-fluid"></button>
+                <form action="{{ route('pertanyaan.like') }}" method="post">
+                    @csrf
+                <input type="hidden" name="user_id" id="" value="{{ auth::user()->id }}">
+                <input type="hidden" name="pertanyaan_id" id="" value="{{ $pertanyaan->id }}">
+                    <button class="btn btn-light" type="submit" name="submit" value="up"><img src="/assets/up.png" alt="UP"
+                            class="img-fluid" ></button>
+                    <p class="m-auto text-center"> {{$pertanyaan->poin->sum('poin')}} </p>
+                    <button class="btn btn-light" value="down" name="submit" type="submit"><img src="/assets/down.png" alt="Down"
+                            class="img-fluid" ></button>    
+                </form>
             </div>
         </div>
         <div class="col-11 card mb-1 border-left-0">
@@ -34,7 +41,7 @@
                     <p class="badge badge-secondary my-auto">{{$pertanyaan->tags}}</p>
                     <p class="m-auto">Created {{$pertanyaan->created_at}}</p>
                     <p class="m-auto">Updated {{$pertanyaan->updated_at}}</p>
-                    <a href="#" class="ml-auto">USER ({{$pertanyaan->author->name}})</a>
+                    <a href="#" class="ml-auto"> {{$pertanyaan->author->name}} &#9679; {{$pertanyaan->author->poin->sum('poin')}}</a>
                 </h6>
             </div>
         </div>
@@ -87,9 +94,19 @@
 
         <div class="col-1 d-flex">
             <div class="row mb-1 border border-right-0">
-                <button class="btn btn-light"><img src="/assets/up.png" alt="UP" class="img-fluid"></button>
+                <form action="{{ route('jawaban.like') }}" method="post">
+                    @csrf
+                <input type="hidden" name="user_id" id="" value="{{ $jawaban->author->id }}">
+                <input type="hidden" name="jawaban_id" id="" value="{{ $jawaban->id }}">
+                    <button class="btn btn-light" type="submit" name="submit" value="up"><img src="/assets/up.png" alt="UP"
+                            class="img-fluid" ></button>
+                    <p class="m-auto text-center"> {{$jawaban->poin->sum('poin')}} </p>
+                    <button class="btn btn-light" value="down" name="submit" type="submit"><img src="/assets/down.png" alt="Down"
+                            class="img-fluid" ></button>    
+                </form>
+                {{-- <button class="btn btn-light"><img src="/assets/up.png" alt="UP" class="img-fluid"></button>
                 <p class="m-auto">0</p>
-                <button class="btn btn-light"><img src="/assets/down.png" alt="Down" class="img-fluid"></button>
+                <button class="btn btn-light"><img src="/assets/down.png" alt="Down" class="img-fluid"></button> --}}
             </div>
         </div>
         <div class="col-11 card mb-1 border-left-0">
@@ -99,7 +116,7 @@
 
                     <p class="m-auto">Created {{$jawaban->created_at}}</p>
                     <p class="m-auto">Updated {{$jawaban->updated_at}}</p>
-                    <a href="#" class="ml-auto">USER ({{$jawaban->author->name}})</a>
+                    <a href="#" class="ml-auto">{{$jawaban->author->name}} &#9679; {{$jawaban->author->poin->sum('poin')}}</a>
                 </h6>
             </div>
         </div>

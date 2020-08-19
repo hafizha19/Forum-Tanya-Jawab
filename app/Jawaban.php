@@ -21,4 +21,9 @@ class Jawaban extends Model
     {
         return $this->hasMany('App\KomentarJawaban');
     }
+
+    public function poin()
+    {
+        return $this->hasMany('App\PoinJawaban');
+    }
 }

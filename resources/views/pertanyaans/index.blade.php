@@ -49,28 +49,35 @@
                 <div class="row">
                     <div class="col-1 d-flex ">
                         <div class="row mb-1 border border-right-0">
-                            <button class="btn btn-light"><img src="assets/up.png" alt="UP" class="img-fluid"></button>
-                            <p class="m-auto">0</p>
-                            <button class="btn btn-light"><img src="assets/down.png" alt="Down"
-                                    class="img-fluid"></button>
+                            <form action="{{ route('pertanyaan.like')}}" method="post">
+                                @csrf
+                            <input type="hidden" name="user_id" id="" value="{{ $tanya->author->id }}">
+                            <input type="hidden" name="pertanyaan_id" id="" value="{{ $tanya->id }}">
+                                <button class="btn btn-light" type="submit" name="submit" value="up"><img src="assets/up.png" alt="UP"
+                                        class="img-fluid" ></button>
+                                <p class="m-auto text-center"> {{$tanya->poin->sum('poin')}} </p>
+                                <button class="btn btn-light" value="down" name="submit" type="submit"><img src="assets/down.png" alt="Down"
+                                        class="img-fluid" ></button>    
+                            </form>
                         </div>
                     </div>
                     <div class="col-11 card mb-1 border-left-0">
                         <div class="card-body">
-                        <h4 class="card-title">{{$tanya->judul}} </h4>
-                            <p class="card-text">{!! $tanya->isi !!} - <a href="#" class="font-weight-light " style="color: #50a3a4 ">{{$tanya->author->name}}</a></p>
+                            <h4 class="card-title">{{$tanya->judul}} </h4>
+                            <p class="card-text">{!! $tanya->isi !!} - <a href="#" class="font-weight-light "
+                                    style="color: #50a3a4 ">{{$tanya->author->name}} &#9679; {{$tanya->author->poin->sum('poin')}}</a></p>
                             <h6 class="d-flex">
                                 <p class="my-auto mr-2">Tags: </p>
                                 @php
-                                    $tags = $tanya->tags;
-                                    $tagsArray = explode(',', $tags);
-                                    
+                                $tags = $tanya->tags;
+                                $tagsArray = explode(',', $tags);
+
                                 @endphp
                                 @foreach ($tagsArray as $tag)
-                                    <p class="badge badge-secondary my-auto mr-1"> {{ $tag }} </p>
+                                <p class="badge badge-secondary my-auto mr-1"> {{ $tag }} </p>
                                 @endforeach
-                                
-                                
+
+
                                 <p class="m-auto">Created {{$tanya->created_at}}</p>
                                 <p class="m-auto">Updated {{$tanya->updated_at}}</p>
                                 <a href="/pertanyaans/{{$tanya->id}}" class="btn btn-primary ml-auto">Detail</a>

@@ -23,6 +23,10 @@ Route::get('/pertanyaans/create', 'PertanyaansController@create')->name('pertany
 Route::post('/pertanyaans', 'PertanyaansController@store')->name('pertanyaan.store');
 Route::get('/pertanyaans/{pertanyaan}', 'PertanyaansController@show')->name('show');
 
+// Tombol Up Down
+Route::post('/pertanyaans/updown', 'PoinPertanyaanController@store')->name('pertanyaan.like');
+Route::post('/jawaban/updown', 'PoinJawabanController@store')->name('jawaban.like');
+
 Route::post('/pertanyaans/komentar', 'KomentarsController@store')->name('komentar.store');
 
 // Route::get('/pertanyaans/jawaban', 'JawabansController@index');
