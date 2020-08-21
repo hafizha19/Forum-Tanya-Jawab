@@ -13,12 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PertanyaansController@index');
+Route::get('/', 'PertanyaansController@index')->withoutMiddleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'PertanyaansController@index');
-Route::get('/pertanyaans', 'PertanyaansController@index')->name('index');
 Route::get('/pertanyaans/create', 'PertanyaansController@create')->name('pertanyaan.create');
 Route::post('/pertanyaans', 'PertanyaansController@store')->name('pertanyaan.store');
 Route::get('/pertanyaans/{pertanyaan}', 'PertanyaansController@show')->name('show');
@@ -27,12 +25,14 @@ Route::get('/pertanyaans/{pertanyaan}', 'PertanyaansController@show')->name('sho
 Route::post('/pertanyaans/updown', 'PoinPertanyaanController@store')->name('pertanyaan.like');
 Route::post('/jawaban/updown', 'PoinJawabanController@store')->name('jawaban.like');
 
+// Komentar Pertanyaan
 Route::post('/pertanyaans/komentar', 'KomentarsController@store')->name('komentar.store');
 
-// Route::get('/pertanyaans/jawaban', 'JawabansController@index');
+// Jawaban
 Route::get('/pertanyaans/jawaban/create', 'JawabansController@create')->name('jawaban.create');
 Route::post('/pertanyaans/jawaban', 'JawabansController@store')->name('jawaban.store');
 
+// Komentar Jawaban
 Route::post('/pertanyaans/jawaban/komentar', 'KomentarJawabanController@store')->name('komentarjawaban.store');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
